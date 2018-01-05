@@ -3,7 +3,12 @@ import React from 'react';
 class App extends React.Component{
     render(){
         var i = 1;
-        
+
+        var myStyle = {
+            fontSize: 100,
+            color: '#FF0000'
+        }
+
         return (
             <div>
                 {/* Nested Elements */}
@@ -18,6 +23,8 @@ class App extends React.Component{
 
                 {/* One cannot use if else statements inside JSX, instead we can use conditional(ternary) expressions */}
                 <h1>{i == 1 ? 'True!':'False'}</h1>
+
+                <h1 style={myStyle}>Stylized Header</h1>
             </div>
         );
     }

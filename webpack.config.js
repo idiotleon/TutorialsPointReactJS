@@ -1,25 +1,18 @@
-var config  = {
-    entry: './main.js',
+module.exports = {
+    entry: './app/main.js',
     output:{
-        path:'/',
-        filename: 'index.js'
+        filename: 'bundle.js'
     },
-    devServer: {
-        inline: true,
-        port: 7777
-    },
-    module:{
+    module: {
         loaders: [
             {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
                 loader: 'babel-loader',
-                query: {
-                    presets:['es2015', 'react']
-                }
+                test: /\.js$/,
+                exclude: /node_modules/
             }
         ]
+    },
+    devServer: {
+        port: 7777
     }
-}
-
-module.exports = config;
+};
